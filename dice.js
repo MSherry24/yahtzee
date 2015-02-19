@@ -12,6 +12,17 @@ function getState(d1, d2, d3, d4, d5) {
     return state;
 }
 
+exports.rollDice = function(numberOfDiceToRoll) {
+    "use strict";
+    var i = 0,
+        results = [0, 0, 0, 0, 0, 0];
+    while (i < numberOfDiceToRoll) {
+        results[Math.floor(Math.random() * (6))] += 1;
+        i += 1;
+    }
+    return results;
+};
+
 exports.getAllDiceCombinations = function () {
     "use strict";
     var allUniqueCombos = [],
@@ -71,5 +82,27 @@ exports.prob5 = {
     '0,1,1,1,1,1' : 0.01543408
 };
 
+exports.prob4 = {
+    '0,0,0,0,0,4' : 0.00077160,
+    '0,0,0,0,1,3' : 0.00308641,
+    '0,0,0,0,2,2' : 0.00462963,
+    '0,0,0,1,1,2' : 0.00925925,
+    '0,0,1,1,1,1' : 0.01851852
+};
+
+exports.prob3 = {
+    '0,0,0,0,0,3' : 0.00462963,
+    '0,0,0,0,1,2' : 0.01388889,
+    '0,0,0,1,1,1' : 0.02777778
+};
+
+exports.prob2 = {
+    '0,0,0,0,0,2' : 0.27777778,
+    '0,0,0,0,1,1' : 0.05555556
+};
+
+exports.prob1 = {
+    '0,0,0,0,0,1' : 0.16666667
+};
 
 
